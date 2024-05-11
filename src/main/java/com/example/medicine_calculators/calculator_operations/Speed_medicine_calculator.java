@@ -15,7 +15,7 @@ public class Speed_medicine_calculator {
                 seconds = (size*20)/(time*60*60);
                 break;
             default:
-                minute = 1;
+                minute = 2;
                 seconds = 1;
         }
 
