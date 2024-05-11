@@ -15,8 +15,8 @@ public class Speed_medicine_calculator {
                 seconds = (size*20)/(time*60*60);
                 break;
             default:
-                minute = 0;
-                seconds = 0;
+                minute = 1;
+                seconds = 1;
         }
 
         return new double[]{minute, seconds};
