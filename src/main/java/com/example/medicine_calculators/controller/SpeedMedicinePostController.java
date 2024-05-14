@@ -35,7 +35,8 @@ public class SpeedMedicinePostController {
         ResultDto resultDto = new ResultDto();
         resultDto = speedMedicineCalculator.calculateResult(dto);
 
-//  блок try catch был одним из вариантов, но я не стал ставить его, так как класс GlobalExceptionHandler будет обрабатывать все исключения контроллеров
+//  блок try catch был одним из вариантов(но в нем будет постоянно создаваться новый объект),
+//  но я не стал ставить его, так как класс GlobalExceptionHandler будет обрабатывать все исключения контроллеров
 //        try{resultDto = speedMedicineCalculator.calculateResult(dto);
 //        }catch (Exception ex) {
 //            return new ResultDto(false,

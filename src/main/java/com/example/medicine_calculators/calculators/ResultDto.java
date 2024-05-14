@@ -13,6 +13,9 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ResultDto extends BaseMedicineDto{
+
+    @Schema(description = "Реузльтат выполнения", format = "String")
+    private String result;
     @Schema(description = "результат выполнения ", format = "Boolean")
     private Boolean success;
 
@@ -31,17 +34,8 @@ public class ResultDto extends BaseMedicineDto{
     @Schema(description = "StackTrace", format = "String")
     private String stacktrace;
 
-    @Schema(description = "Реузльтат выполнения", format = "String")
-    private String result;
 
-    public ResultDto(Boolean success, String errorMessage, LocalDateTime errorDateTime, Integer status, String cause, String stacktrace) {
-        this.success = success;
-        this.errorMessage = errorMessage;
-        this.errorDateTime = errorDateTime;
-        this.status = status;
-        this.cause = cause;
-        this.stacktrace = stacktrace;
-    }
+
 
     public ResultDto(String result, Boolean success) {
         this.result = result;

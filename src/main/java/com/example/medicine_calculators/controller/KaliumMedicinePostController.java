@@ -24,9 +24,9 @@ import java.time.LocalDateTime;
 @Tag(name = "Расчет медицинских калькуляторов", description = "Возвращает результаты расчетов в формате json")
 @RequestMapping("/calculator")
 public class KaliumMedicinePostController {
-    private final KaliumMedicineCalculator kaliumsMedicineCalculator;
+    private final KaliumMedicineCalculator kaliumMedicineCalculator;
     @Autowired
-    protected KaliumMedicinePostController(KaliumMedicineCalculator kalium) {this.kaliumsMedicineCalculator = kalium;}
+    protected KaliumMedicinePostController(KaliumMedicineCalculator kalium) {this.kaliumMedicineCalculator = kalium;}
 
     @Qualifier("KaliumMedicineCalculator")
     @Operation(summary = "Калькулятор Расчет дефицита калия",
@@ -34,9 +34,10 @@ public class KaliumMedicinePostController {
     @PostMapping("/Kalium_medicine/result")
     public ResultDto result(@Valid  @NotNull  @RequestBody KaliumMedicineDto dto){
         ResultDto resultDto = new ResultDto();
-        resultDto = kaliumsMedicineCalculator.calculateResult(dto);
+        resultDto = kaliumMedicineCalculator.calculateResult(dto);
 
-//  блок try catch был одним из вариантов, но я не стал ставить его, так как класс GlobalExceptionHandler будет обрабатывать все исключения контроллеров
+//  блок try catch был одним из вариантов(но в нем будет постоянно создаваться новый объект),
+//  но я не стал ставить его, так как класс GlobalExceptionHandler будет обрабатывать все исключения контроллеров
 //        try{resultDto = kaliumsMedicineCalculator.calculateResult(dto);
 //        }catch (Exception ex) {
 //            return new ResultDto(false,

@@ -24,7 +24,8 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public ResultDto handleException(Exception ex) {
-        return new ResultDto(false,
+        return new ResultDto("ошибка " + ex.getClass().getSimpleName(),
+                false,
                 ex.getMessage(),
                 LocalDateTime.now(),
                 HttpStatus.INTERNAL_SERVER_ERROR.value(),
@@ -33,7 +34,8 @@ public class GlobalExceptionHandler {
     }
     @ExceptionHandler(ArithmeticException.class)
     public ResultDto handleArithmeticException(Exception ex) {
-        return new ResultDto(false,
+        return new ResultDto("арифметическая ошибка",
+                false,
                 ex.getMessage(),
                 LocalDateTime.now(),
                 HttpStatus.INTERNAL_SERVER_ERROR.value(),
@@ -42,7 +44,8 @@ public class GlobalExceptionHandler {
     }
     @ExceptionHandler(NullPointerException.class)
     public ResultDto handleNullPointerException(NullPointerException ex) {
-        return new ResultDto(false,
+        return new ResultDto("ошибка  - обращение к null",
+                false,
                 ex.getMessage(),
                 LocalDateTime.now(),
                 HttpStatus.INTERNAL_SERVER_ERROR.value(),
@@ -52,7 +55,8 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(IllegalArgumentException.class)
     public ResultDto handleIllegalArgumentException(IllegalArgumentException ex) {
-        return new ResultDto(false,
+        return new ResultDto("ошибка - недопустимое значение аргумента",
+                false,
                 ex.getMessage(),
                 LocalDateTime.now(),
                 HttpStatus.INTERNAL_SERVER_ERROR.value(),

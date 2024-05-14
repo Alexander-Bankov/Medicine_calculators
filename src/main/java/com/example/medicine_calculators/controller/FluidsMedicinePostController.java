@@ -32,7 +32,8 @@ public class FluidsMedicinePostController {
     public ResultDto result(@Valid @NotNull @RequestBody FluidsMedicineDto dto) {
         ResultDto resultDto = new ResultDto();
         resultDto = fluidsMedicineCalculator.calculateResult(dto);
-//  блок try catch был одним из вариантов, но я не стал ставить его, так как класс GlobalExceptionHandler будет обрабатывать все исключения контроллеров
+//  блок try catch был одним из вариантов(но в нем будет постоянно создаваться новый объект),
+//  но я не стал ставить его, так как класс GlobalExceptionHandler будет обрабатывать все исключения контроллеров
 //        try{resultDto = fluidsMedicineCalculator.calculateResult(dto);
 //        }catch (Exception ex) {
 //            return new ResultDto(false,
