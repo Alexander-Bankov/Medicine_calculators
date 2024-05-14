@@ -22,7 +22,7 @@ public class SecurityConfig {
         return httpSecurity
                 .csrf((csrf) -> csrf.disable())
                 .authorizeHttpRequests(registry ->{
-                    registry.requestMatchers("/calrculato").permitAll();
+                    registry.requestMatchers("/calculator").permitAll();
                     registry.anyRequest().authenticated();
                 }).formLogin(AbstractAuthenticationFilterConfigurer::permitAll)
                 .build();
