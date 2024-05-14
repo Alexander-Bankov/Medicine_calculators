@@ -1,5 +1,6 @@
 package com.example.medicine_calculators.controller;
 
+import com.example.medicine_calculators.exeptions.*;
 import com.example.medicine_calculators.calculator_operations.FluidsMedicineCalculator;
 import com.example.medicine_calculators.calculators.FluidsMedicineDto;
 import com.example.medicine_calculators.calculators.ResultDto;
@@ -30,15 +31,17 @@ public class FluidsMedicinePostController {
     @PostMapping("/Fluids_medicine/result")
     public ResultDto result(@Valid @NotNull @RequestBody FluidsMedicineDto dto) {
         ResultDto resultDto = new ResultDto();
-        try{resultDto = fluidsMedicineCalculator.calculateResult(dto);
-        }catch (Exception ex) {
-            return new ResultDto(false,
-                    ex.getMessage(),
-                    LocalDateTime.now(),
-                    HttpStatus.INTERNAL_SERVER_ERROR.value(),
-                    ExceptionUtils.getRootCauseMessage(ex),
-                    ExceptionUtils.getStackTrace(ex));
-        }
+        resultDto = fluidsMedicineCalculator.calculateResult(dto);
+//  блок try catch был одним из вариантов, но я не стал ставить его, так как класс GlobalExceptionHandler будет обрабатывать все исключения контроллеров
+//        try{resultDto = fluidsMedicineCalculator.calculateResult(dto);
+//        }catch (Exception ex) {
+//            return new ResultDto(false,
+//                    ex.getMessage(),
+//                    LocalDateTime.now(),
+//                    HttpStatus.INTERNAL_SERVER_ERROR.value(),
+//                    ExceptionUtils.getRootCauseMessage(ex),
+//                    ExceptionUtils.getStackTrace(ex));
+//        }
         return resultDto;
     }
 }

@@ -33,15 +33,18 @@ public class SpeedMedicinePostController {
     @PostMapping("/Speed_medicine/result")
     public ResultDto result(@Valid  @NotNull  @RequestBody SpeedMedicineDto dto){
         ResultDto resultDto = new ResultDto();
-        try{resultDto = speedMedicineCalculator.calculateResult(dto);
-        }catch (Exception ex) {
-            return new ResultDto(false,
-                    ex.getMessage(),
-                    LocalDateTime.now(),
-                    HttpStatus.INTERNAL_SERVER_ERROR.value(),
-                    ExceptionUtils.getRootCauseMessage(ex),
-                    ExceptionUtils.getStackTrace(ex));
-        }
+        resultDto = speedMedicineCalculator.calculateResult(dto);
+
+//  блок try catch был одним из вариантов, но я не стал ставить его, так как класс GlobalExceptionHandler будет обрабатывать все исключения контроллеров
+//        try{resultDto = speedMedicineCalculator.calculateResult(dto);
+//        }catch (Exception ex) {
+//            return new ResultDto(false,
+//                    ex.getMessage(),
+//                    LocalDateTime.now(),
+//                    HttpStatus.INTERNAL_SERVER_ERROR.value(),
+//                    ExceptionUtils.getRootCauseMessage(ex),
+//                    ExceptionUtils.getStackTrace(ex));
+//        }
         return resultDto;
     }
 }

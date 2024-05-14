@@ -34,15 +34,18 @@ public class KaliumMedicinePostController {
     @PostMapping("/Kalium_medicine/result")
     public ResultDto result(@Valid  @NotNull  @RequestBody KaliumMedicineDto dto){
         ResultDto resultDto = new ResultDto();
-        try{resultDto = kaliumsMedicineCalculator.calculateResult(dto);
-        }catch (Exception ex) {
-            return new ResultDto(false,
-                    ex.getMessage(),
-                    LocalDateTime.now(),
-                    HttpStatus.INTERNAL_SERVER_ERROR.value(),
-                    ExceptionUtils.getRootCauseMessage(ex),
-                    ExceptionUtils.getStackTrace(ex));
-        }
+        resultDto = kaliumsMedicineCalculator.calculateResult(dto);
+
+//  блок try catch был одним из вариантов, но я не стал ставить его, так как класс GlobalExceptionHandler будет обрабатывать все исключения контроллеров
+//        try{resultDto = kaliumsMedicineCalculator.calculateResult(dto);
+//        }catch (Exception ex) {
+//            return new ResultDto(false,
+//                    ex.getMessage(),
+//                    LocalDateTime.now(),
+//                    HttpStatus.INTERNAL_SERVER_ERROR.value(),
+//                    ExceptionUtils.getRootCauseMessage(ex),
+//                    ExceptionUtils.getStackTrace(ex));
+//        }
         return resultDto;
     }
 }
