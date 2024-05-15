@@ -31,12 +31,28 @@ public class SpeedMedicinePostController {
     @Operation(summary = "Калькулятор Расчет скорости внутривенного капельного введения препарата",
             description = "Этот калькулятор позволяет рассчитать скорость ведения внутривенного капельного препарата")
     @PostMapping("/Speed_medicine/result")
-    public ResultDto result(@Valid  @NotNull  @RequestBody SpeedMedicineDto dto){
+    public ResultDto result(@Valid  @NotNull  @RequestBody SpeedMedicineDto dto) /*throws Exception - для 1 try catch*/ {
         ResultDto resultDto = new ResultDto();
         resultDto = speedMedicineCalculator.calculateResult(dto);
 
-//  блок try catch был одним из вариантов(но в нем будет постоянно создаваться новый объект),
+        //  блок try catch был одним из вариантов(но в нем будет постоянно создаваться новый объект),
 //  но я не стал ставить его, так как класс GlobalExceptionHandler будет обрабатывать все исключения контроллеров
+        // 1 вариант блока try catch
+//        try{resultDto = speedMedicineCalculator.calculateResult(dto);
+//        }
+//        catch (NullPointerException ex) {
+//            throw new NullPointerException("ссылка на null");
+//        }
+//        catch (ArithmeticException ex) {
+//            throw new ArithmeticException("арифметическая ошибка");
+//        }
+//        catch (IllegalArgumentException ex) {
+//            throw new IllegalArgumentException("недопустимое значение");
+//        }
+//        catch (Exception ex) {
+//            throw new Exception("ошибка иного типа");
+//        }
+//         2 варинат блока try catch
 //        try{resultDto = speedMedicineCalculator.calculateResult(dto);
 //        }catch (Exception ex) {
 //            return new ResultDto(false,
