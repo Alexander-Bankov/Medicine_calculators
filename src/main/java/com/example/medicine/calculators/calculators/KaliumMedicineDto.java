@@ -16,8 +16,8 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 public class KaliumMedicineDto extends BaseMedicineDto {
     @Schema(description = "Калий сыворотки ", format = "BigDecimal")
-//    @DecimalMax(value = "5", message = "'Калий сыворотки' не должен превышать 5 ммоль/л")
-//    @DecimalMin(value = "0.1", message = "'Калий сыворотки' должно быть не меньше 0.1 ммоль/л")
+    @DecimalMax(value = "4.999", message = "'Калий сыворотки' не должен превышать 4.999 ммоль/л")
+    @DecimalMin(value = "0.1", message = "'Калий сыворотки' должно быть не меньше 0.1 ммоль/л")
     @NotNull(message = "параметр 'калий сыворотки' является обязательным")
     private BigDecimal kalium;
 
