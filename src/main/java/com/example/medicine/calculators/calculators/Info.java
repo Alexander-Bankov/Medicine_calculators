@@ -1,4 +1,4 @@
-package com.example.medicine_calculators.calculators;
+package com.example.medicine.calculators.calculators;
 
 
 import io.swagger.v3.oas.annotations.media.Schema;

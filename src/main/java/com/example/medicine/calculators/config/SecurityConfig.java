@@ -1,4 +1,4 @@
-package com.example.medicine_calculators.config;
+package com.example.medicine.calculators.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

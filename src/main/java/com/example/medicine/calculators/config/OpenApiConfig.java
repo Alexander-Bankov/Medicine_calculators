@@ -1,4 +1,4 @@
-package com.example.medicine_calculators.config;
+package com.example.medicine.calculators.config;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Contact;

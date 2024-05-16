@@ -1,4 +1,4 @@
-package com.example.medicine_calculators;
+package com.example.medicine.calculators;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

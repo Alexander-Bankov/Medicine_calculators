@@ -1,10 +1,9 @@
-package com.example.medicine_calculators.calculators;
+package com.example.medicine.calculators.calculators;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Schema(description = "Данный DTO класс предназначен для получения результата вычислений или ошибки")
 @Data

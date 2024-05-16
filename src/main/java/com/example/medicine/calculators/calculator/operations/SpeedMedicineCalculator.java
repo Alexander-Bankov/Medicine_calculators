@@ -1,16 +1,12 @@
-package com.example.medicine_calculators.calculator_operations;
+package com.example.medicine.calculators.calculator.operations;
 
-import com.example.medicine_calculators.calculators.FluidsMedicineDto;
-import com.example.medicine_calculators.calculators.ResultDto;
-import com.example.medicine_calculators.calculators.SpeedMedicineDto;
+import com.example.medicine.calculators.calculators.ResultDto;
+import com.example.medicine.calculators.calculators.SpeedMedicineDto;
 import lombok.Data;
-import org.apache.commons.lang3.exception.ExceptionUtils;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.time.LocalDateTime;
 
 @Data
 @Service

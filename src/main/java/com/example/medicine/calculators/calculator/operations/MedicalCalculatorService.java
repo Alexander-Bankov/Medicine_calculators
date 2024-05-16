@@ -1,7 +1,7 @@
-package com.example.medicine_calculators.calculator_operations;
+package com.example.medicine.calculators.calculator.operations;
 
-import com.example.medicine_calculators.calculators.BaseMedicineDto;
-import com.example.medicine_calculators.calculators.ResultDto;
+import com.example.medicine.calculators.calculators.BaseMedicineDto;
+import com.example.medicine.calculators.calculators.ResultDto;
 
 import java.math.BigDecimal;
 

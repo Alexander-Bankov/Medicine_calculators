@@ -1,15 +1,11 @@
-package com.example.medicine_calculators.calculator_operations;
+package com.example.medicine.calculators.calculator.operations;
 
-import org.apache.commons.lang3.exception.ExceptionUtils;
-import org.springframework.http.HttpStatus;
-import com.example.medicine_calculators.calculators.FluidsMedicineDto;
-import com.example.medicine_calculators.calculators.ResultDto;
+import com.example.medicine.calculators.calculators.FluidsMedicineDto;
+import com.example.medicine.calculators.calculators.ResultDto;
 import lombok.Data;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import java.util.List;
 
 
 @Data

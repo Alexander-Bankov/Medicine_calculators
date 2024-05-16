@@ -1,12 +1,11 @@
-package com.example.medicine_calculators.calculator_operations;
+package com.example.medicine.calculators.calculator.operations;
 
-import com.example.medicine_calculators.calculators.KaliumMedicineDto;
-import com.example.medicine_calculators.calculators.ResultDto;
+import com.example.medicine.calculators.calculators.KaliumMedicineDto;
+import com.example.medicine.calculators.calculators.ResultDto;
 import lombok.Data;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 
 @Data
 @Service
