@@ -1,6 +1,6 @@
 package com.example.medicine.calculators.exeptions;
 
-import com.example.medicine.calculators.calculators.ResultDto;
+import com.example.medicine.calculators.dto.ResultDto;
 import io.swagger.v3.oas.annotations.media.Schema;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.springframework.http.HttpStatus;
@@ -15,7 +15,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public ResultDto handleException(Exception ex) {
-        return new ResultDto("ошибка " + ex.getClass().getSimpleName(),
+        return new ResultDto(String.format("ошибка %s", ex.getClass().getSimpleName()),
                 false,
                 ex.getMessage(),
                 LocalDateTime.now(),
