@@ -18,7 +18,7 @@ public class SpeedMedicineCalculator implements MedicalCalculatorService<SpeedMe
         BigDecimal minut = null;
         BigDecimal second = null;
         switch(dto.getTime_name()){
-            case "minute":
+            case "minut":
                 minut = dto.getSize().multiply(new BigDecimal("20")).divide(dto.getTime(), RoundingMode.HALF_UP);
                 second = dto.getSize().multiply(new BigDecimal("20")).divide(dto.getTime(), RoundingMode.HALF_UP).divide(new BigDecimal("60"), RoundingMode.HALF_UP);
                 break;
