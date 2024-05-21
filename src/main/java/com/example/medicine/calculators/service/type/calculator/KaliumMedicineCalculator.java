@@ -29,7 +29,7 @@ public class KaliumMedicineCalculator implements MedicalCalculatorService<Kalium
                     Дефицит калия %s ммоль или %s миллиграмм.
                     Для возмещения необходимо %s 7.5%% раствора или %s 4%% раствора.
                     Максимальная доза в день %s ммоль""",
-                deficiteMoll, deficiteMilligram, fluidSevenPercent, fluidFourPercent, maximumDoza),true);
+                deficiteMoll,deficiteMilligram,fluidSevenPercent,fluidFourPercent,maximumDoza),true);
     }
 
 
