@@ -1,4 +1,4 @@
-package com.example.medicine.calculators.calculators;
+package com.example.medicine.calculators.dto;
 
 
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -12,7 +12,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Info extends BaseMedicineDto{
+public class InfoDto extends BaseMedicineDto{
     @Schema(description = "Информация",format = "String")
     private String info;
 }

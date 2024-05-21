@@ -1,4 +1,4 @@
-package com.example.medicine.calculators.calculators;
+package com.example.medicine.calculators.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
@@ -13,9 +13,9 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class ResultDto extends BaseMedicineDto{
 
-    @Schema(description = "Реузльтат выполнения", format = "String")
+    @Schema(description = "Результат выполнения", format = "String")
     private String result;
-    @Schema(description = "результат выполнения ", format = "Boolean")
+    @Schema(description = "Результат выполнения ", format = "Boolean")
     private Boolean success;
 
     @Schema(description = "Сообщение ошибки", format = "String")

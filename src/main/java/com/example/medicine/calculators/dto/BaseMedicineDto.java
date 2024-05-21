@@ -1,4 +1,4 @@
-package com.example.medicine.calculators.calculators;
+package com.example.medicine.calculators.dto;
 
 import lombok.Data;
 

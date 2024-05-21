@@ -1,4 +1,4 @@
-package com.example.medicine.calculators.calculators;
+package com.example.medicine.calculators.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.DecimalMin;
@@ -17,7 +17,7 @@ import java.math.BigDecimal;
 @Setter
 @AllArgsConstructor
 public class SpeedMedicineDto extends BaseMedicineDto {
-    @Schema(description = "В какой еднице вводится время(часы или минуты)",format = "String")
+    @Schema(description = "В какой единице вводится время(часы или минуты)",format = "String")
     @NotNull(message = "Параметр 'в какой единице вводится время' обязательный для заполнения")
     private String time_name;
 
