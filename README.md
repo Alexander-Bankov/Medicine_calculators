@@ -1,6 +1,6 @@
 # Медицинсикие калькуляторы.
 # Документация Swagger
-Чтобы просмотреть документацию Swagger, перейдите по ссылке - http://localhost:8080/medicine_calculator/swagger-ui/index.html
+Чтобы просмотреть документацию Swagger, перейдите по ссылке - http://localhost:8080/medicine-calculator/swagger-ui/index.html
 # Информация о калькуляторах
 Имеется 3 калькулятора
 Чтобы получить информацию о том какие калькуляторы есть, перейдите по ссылке - http://localhost:8080/medicine_calculator/calculator
