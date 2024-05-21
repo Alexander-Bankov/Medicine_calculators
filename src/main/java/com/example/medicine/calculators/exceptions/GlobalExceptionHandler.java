@@ -1,4 +1,4 @@
-package com.example.medicine.calculators.exeptions;
+package com.example.medicine.calculators.exceptions;
 
 import com.example.medicine.calculators.dto.ResultDto;
 import io.swagger.v3.oas.annotations.media.Schema;
