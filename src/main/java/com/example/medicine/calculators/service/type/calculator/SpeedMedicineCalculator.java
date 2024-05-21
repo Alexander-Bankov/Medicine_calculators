@@ -29,7 +29,7 @@ public class SpeedMedicineCalculator implements MedicalCalculatorService<SpeedMe
             default:
                 throw new IllegalArgumentException("введен некорректный указатель времени");
         }
-        return new ResultDto(String.format("%s Капель в минуту, %s капель в секунду", minute, second),true);
+        return new ResultDto(String.format("%s Капель в минуту, %s капель в секунду",minute,second),true);
     }
 
 

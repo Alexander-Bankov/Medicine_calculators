@@ -17,7 +17,7 @@ public class FluidsMedicineCalculator implements MedicalCalculatorService<Fluids
     public ResultDto calculateResult(FluidsMedicineDto dto) {
         BigDecimal milligramm = dto.getPercent().multiply(dto.getSize()).multiply(BigDecimal.TEN);
         BigDecimal microgramm = dto.getPercent().multiply(dto.getSize()).multiply(new BigDecimal("10000"));
-        return new ResultDto(String.format("Количество миллиграмм %s, количество микрограмм %s", milligramm, microgramm),true);
+        return new ResultDto(String.format("Количество миллиграмм %s, количество микрограмм %s",milligramm,microgramm),true);
     }
 }
 
