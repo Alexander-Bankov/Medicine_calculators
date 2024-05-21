@@ -18,7 +18,7 @@ public class FluidsMedicinePostController {
     @Autowired
     protected FluidsMedicinePostController(FluidsMedicineCalculator fluids){this.fluidsMedicineCalculator = fluids;}
 
-    @Qualifier("fluids-medicine-calculator")
+    @Qualifier("FluidsMedicineCalculator")
     @Operation(summary = "Калькулятор Расчет содержания вещества в растворе",
             description = "Этот калькулятор позволяет пересчитать процентное содержание вещества в заданном объеме раствора в миллиграммы")
     @PostMapping("/fluids-medicine/result")
