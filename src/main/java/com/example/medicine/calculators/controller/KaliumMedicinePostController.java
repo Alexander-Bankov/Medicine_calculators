@@ -21,7 +21,7 @@ public class KaliumMedicinePostController {
     @Autowired
     protected KaliumMedicinePostController(KaliumMedicineCalculator kalium) {this.kaliumMedicineCalculator = kalium;}
 
-    @Qualifier("KaliumMedicineCalculator")
+    @Qualifier("kalium-medicine-calculator")
     @Operation(summary = "Калькулятор Расчет дефицита калия",
             description = "Этот калькулятор позволяет рассчитать дефицит калия в плазме крови и объем его возмещения")
     @PostMapping("/kalium-medicine/result")
