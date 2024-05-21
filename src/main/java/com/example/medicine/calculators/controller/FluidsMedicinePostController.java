@@ -1,8 +1,8 @@
 package com.example.medicine.calculators.controller;
 
-import com.example.medicine.calculators.calculator.operations.FluidsMedicineCalculator;
-import com.example.medicine.calculators.calculators.ResultDto;
-import com.example.medicine.calculators.calculators.FluidsMedicineDto;
+import com.example.medicine.calculators.service.type.calculator.FluidsMedicineCalculator;
+import com.example.medicine.calculators.dto.ResultDto;
+import com.example.medicine.calculators.dto.FluidsMedicineDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
@@ -18,13 +18,11 @@ public class FluidsMedicinePostController {
     @Autowired
     protected FluidsMedicinePostController(FluidsMedicineCalculator fluids){this.fluidsMedicineCalculator = fluids;}
 
-    @Qualifier("FluidsMedicineCalculator")
+    @Qualifier("fluids-medicine-calculator")
     @Operation(summary = "Калькулятор Расчет содержания вещества в растворе",
             description = "Этот калькулятор позволяет пересчитать процентное содержание вещества в заданном объеме раствора в миллиграммы")
-    @PostMapping("/Fluids_medicine/result")
-    public ResultDto result(@Valid @RequestBody FluidsMedicineDto dto) /*throws Exception - для 1 try catch*/ {
-        ResultDto resultDto = new ResultDto();
-        resultDto = fluidsMedicineCalculator.calculateResult(dto);
-        return resultDto;
+    @PostMapping("/fluids-medicine/result")
+    public ResultDto result(@Valid @RequestBody FluidsMedicineDto dto)  {
+        return fluidsMedicineCalculator.calculateResult(dto);
     }
 }
