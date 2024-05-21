@@ -21,7 +21,7 @@ public class SpeedMedicinePostController {
     @Autowired
     protected SpeedMedicinePostController(SpeedMedicineCalculator speed){this.speedMedicineCalculator = speed;}
 
-    @Qualifier("speed-medicine-calculator")
+    @Qualifier("SpeedMedicineCalculator")
     @Operation(summary = "Калькулятор Расчет скорости внутривенного капельного введения препарата",
             description = "Этот калькулятор позволяет рассчитать скорость ведения внутривенного капельного препарата")
     @PostMapping("/speed-medicine/result")
