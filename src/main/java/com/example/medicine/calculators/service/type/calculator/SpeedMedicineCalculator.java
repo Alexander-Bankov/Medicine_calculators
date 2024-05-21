@@ -15,21 +15,21 @@ public class SpeedMedicineCalculator implements MedicalCalculatorService<SpeedMe
 
     @Override
     public ResultDto calculateResult(SpeedMedicineDto dto) {
-        BigDecimal minut = null;
+        BigDecimal minute = null;
         BigDecimal second = null;
         switch(dto.getTime_name()){
             case "minute":
-                minut = dto.getSize().multiply(new BigDecimal("20")).divide(dto.getTime(), RoundingMode.HALF_UP);
+                minute = dto.getSize().multiply(new BigDecimal("20")).divide(dto.getTime(), RoundingMode.HALF_UP);
                 second = dto.getSize().multiply(new BigDecimal("20")).divide(dto.getTime(), RoundingMode.HALF_UP).divide(new BigDecimal("60"), RoundingMode.HALF_UP);
                 break;
             case "hours":
-                minut = dto.getSize().multiply(new BigDecimal("20")).divide(dto.getTime(), RoundingMode.HALF_UP).divide(new BigDecimal("60"), RoundingMode.HALF_UP);
+                minute = dto.getSize().multiply(new BigDecimal("20")).divide(dto.getTime(), RoundingMode.HALF_UP).divide(new BigDecimal("60"), RoundingMode.HALF_UP);
                 second = dto.getSize().multiply(new BigDecimal("20")).divide(dto.getTime(), RoundingMode.HALF_UP).divide(new BigDecimal("3600"), RoundingMode.HALF_UP);
                 break;
             default:
                 throw new IllegalArgumentException("введен некорректный указатель времени");
         }
-        return new ResultDto(String.format("%s Капель в минуту, %s капель в секунду",minut,second),true);
+        return new ResultDto(String.format("%s Капель в минуту, %s капель в секунду",minute,second),true);
     }
 
 
