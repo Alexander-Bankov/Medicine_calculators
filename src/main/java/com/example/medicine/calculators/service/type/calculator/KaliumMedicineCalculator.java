@@ -1,7 +1,8 @@
-package com.example.medicine.calculators.calculator.operations;
+package com.example.medicine.calculators.service.type.calculator;
 
-import com.example.medicine.calculators.calculators.KaliumMedicineDto;
-import com.example.medicine.calculators.calculators.ResultDto;
+import com.example.medicine.calculators.dto.KaliumMedicineDto;
+import com.example.medicine.calculators.dto.ResultDto;
+import com.example.medicine.calculators.service.MedicalCalculatorService;
 import lombok.Data;
 import org.springframework.stereotype.Service;
 
@@ -10,10 +11,10 @@ import java.math.RoundingMode;
 
 @Data
 @Service
-public class KaliumMedicineCalculator implements MedicalCalculatorService<KaliumMedicineDto>{
+public class KaliumMedicineCalculator implements MedicalCalculatorService<KaliumMedicineDto> {
 
     @Override
-    public BigDecimal[] calculate(KaliumMedicineDto dto) {
+    public ResultDto calculateResult(KaliumMedicineDto dto) {
         BigDecimal deficiteMoll;
         BigDecimal deficiteMilligram;
         BigDecimal fluidSevenPercent;
@@ -24,28 +25,11 @@ public class KaliumMedicineCalculator implements MedicalCalculatorService<Kalium
         fluidSevenPercent = deficiteMoll;
         fluidFourPercent = deficiteMilligram.divide(new BigDecimal("40"), RoundingMode.HALF_UP);
         maximumDoza = dto.getWeight().multiply(new BigDecimal("3"));
-        return new BigDecimal[]{deficiteMoll,deficiteMilligram,fluidSevenPercent,fluidFourPercent,maximumDoza};
-    }
-
-    @Override
-    public ResultDto calculateResult(KaliumMedicineDto dto) {
-        BigDecimal[] kaliumResult;
-        kaliumResult = calculate(dto);
-        return result(kaliumResult);
-    }
-
-    @Override
-    public ResultDto result(BigDecimal[] result) {
-        if (result[0] != BigDecimal.ZERO){
-            return  new ResultDto(String.format("""
+        return  new ResultDto(String.format("""
                     Дефицит калия %s ммоль или %s миллиграмм.
                     Для возмещения необходимо %s 7.5%% раствора или %s 4%% раствора.
                     Максимальная доза в день %s ммоль""",
-                    result[0],result[1],result[2],result[3],result[4]),true);
-        }
-        else {
-            return new ResultDto("Дефицита калия нет",true);
-        }
+                deficiteMoll,deficiteMilligram,fluidSevenPercent,fluidFourPercent,maximumDoza),true);
     }
 
 
