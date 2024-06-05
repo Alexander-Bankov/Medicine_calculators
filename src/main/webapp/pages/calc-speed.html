@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <title>Скорость введения препарата</title>
+    <link rel="stylesheet" href="../lib/css/style.css">
+    <link rel="stylesheet" href="../lib/css/bootstrap.min.css">
+    <script src="../lib/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<header th:fragment="head">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="http://localhost:8080/medicine-calculator/index.html">Медицинские калькуляторы</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+</header>
+<div class="container">
+    <div class="row">
+        <div class="col">
+        </div>
+        <div id="calc_input" class="col-6">
+            <h1 style="padding-left: 27%;">Расчет скорости внутривенного капельного введения препарата</h1>
+            <form name="form" id="form">
+                <div class="mb-3">
+                    <label for="sizeInput" class="form-label">Объем раствора</label>
+                    <input type="number" id="sizeInput" class="form-control" aria-describedby="size" onchange="checkSize(this)">
+                    <div id="size" class="form-control">
+                        Введите числовое значение объема раствора
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="timeInput" class="form-label">Время ввода</label>
+                    <input type="number" id="timeInput" class="form-control" aria-describedby="time" onchange="checkTime(this)">
+                    <div id="time" class="form-control">
+                        Введите желаемое время введения
+                    </div>
+                </div>
+                <div class="form-group">
+                    <legend>Время</legend>
+                    <div class="dropdown">
+                        <select id="mySelect1" class="form-control">
+                            <option>Минуты</option>
+                            <option>Часы</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-12 spacer">
+                    <button style="float:left" type="submit" id="Send" class="btn btn-primary">Рассчитать</button>
+                    <button style="float:left" type="reset" id="Reset" class="btn btn-primary">Очистить</button>
+                </div>
+                <div class="clear"></div>
+            </form>
+        </div>
+        <div class="col">
+        </div>
+    </div>
+</div>
+<h1 id="result" class="details"></h1>
+
+
+<script>document.write("<script type='text/javascript' src='../app/speed.js?v=" + Date.now() + "'><\/script>");</script>
+</body>
+</html>

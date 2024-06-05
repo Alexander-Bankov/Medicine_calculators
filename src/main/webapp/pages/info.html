@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <title>Информация о калькуляторах</title>
+    <link rel="stylesheet" href="../lib/css/style.css">
+    <link rel="stylesheet" href="../lib/css/bootstrap.min.css">
+    <script src="../lib/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<header th:fragment="head">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="http://localhost:8080/medicine-calculator/index.html">Медицинские калькуляторы</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+</header>
+<div class="container">
+    <div class="row">
+        <div class="col">
+        </div>
+        <div id="calc_input" class="col-6">
+            <h1 style="padding-left: 27%;">Информация о калькуляторах</h1>
+            <form name="form" id="form">
+                <div class="form-group">
+                    <legend>Калькулятор</legend>
+                    <div class="dropdown">
+                        <select id="mySelect1" class="form-control">
+                            <option>Калькулятор расчета дефицита Калия</option>
+                            <option>Калькулятор расчета содержания вещества в растворе</option>
+                            <option>Калькулятор расчета скорости внутривенного капельного введения препарата</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-12 spacer">
+                    <button style="float:left" type="submit" id="Send" class="btn btn-primary">Показать</button>
+                    <button style="float:left" type="reset" id="Reset" class="btn btn-primary">Очистить</button>
+                </div>
+                <div class="clear"></div>
+            </form>
+        </div>
+        <div class="col">
+        </div>
+    </div>
+</div>
+<h1 id="result" class="details"></h1>
+
+
+<script>document.write("<script type='text/javascript' src='../app/info.js?v=" + Date.now() + "'><\/script>");</script>
+</body>
+</html>
