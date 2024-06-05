@@ -1,10 +1,7 @@
 package com.example.medicine.calculators.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import jakarta.validation.constraints.DecimalMin;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,8 +19,8 @@ public class SpeedMedicineDto extends BaseMedicineDto {
     private String time_name;
 
     @Schema(description = "Объем раствора", format = "BigDecimal")
-    @Positive(message = "Значение 'Объем раствора' строго положительное")
-    @Min(value = 1, message = "Минимальное значение 'объема раствора' 1 мл")
+    @DecimalMax(value = "100", message = "Максимальное значение 'объема раствора' 1 мл")
+    @DecimalMin(value = "1", message = "Минимальное значение 'объема раствора' 1 мл")
     @NotNull(message = "Параметр 'объем раствора' обязательный для заполнения")
     private BigDecimal size;
 
