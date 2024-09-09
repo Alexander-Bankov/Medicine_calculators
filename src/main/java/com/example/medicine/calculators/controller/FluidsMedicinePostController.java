@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @Tag(name = "Расчет медицинских калькуляторов", description = "Возвращает результаты расчетов в формате json")
 @RequestMapping("/calculator")
 public class FluidsMedicinePostController {
+
     private final FluidsMedicineCalculator fluidsMedicineCalculator;
     @Autowired
     protected FluidsMedicinePostController(FluidsMedicineCalculator fluids){this.fluidsMedicineCalculator = fluids;}
